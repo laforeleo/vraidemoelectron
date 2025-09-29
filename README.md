@@ -7,3 +7,4 @@ Les fonctionnalitées suivantes ont été faites et testé :
  - Page d’inscription
  - Modifier un article
  - Supprimer un article
+ - Ajouter un article
