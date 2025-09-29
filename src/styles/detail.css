@@ -1,0 +1,134 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  z-index: 50;
+}
+.header-left { display: flex; align-items: center; gap: .75rem; }
+.logo {
+  font-size: 1.4rem;
+  background: #eef2ff;
+  padding: .4rem .6rem;
+  border-radius: 8px;
+}
+.title { margin: 0; font-size: 1.2rem; font-weight: 700; }
+.header-actions { display: flex; gap: .6rem; }
+
+.content {
+  flex: 1;
+  padding: 6rem 1.5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.article-detail {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,.05);
+}
+
+.detail-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.detail-img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.detail-info {
+  flex: 1;
+}
+
+.detail-info h2 {
+  margin: 0 0 .6rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.desc { color: #334155; margin: .5rem 0 1rem; }
+.author { color: #0f172a; font-size: .95rem; }
+
+.back-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.back-btn {
+  min-width: 120px;
+}
+
+.btn-primary {
+  background: #273c75 !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 8px;
+  padding: .55rem .9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #192a56 !important; }
+.btn-primary[disabled] { opacity: .6; cursor: not-allowed; }
+
+.btn-secondary {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: .55rem .9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-secondary:hover { background: #e2e8f0; }
+
+.state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #475569;
+}
+.spinner {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 3px solid #e5e7eb;
+  border-top-color: #273c75;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto .5rem;
+}
+
+@media (max-width: 700px) {
+  .detail-layout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .detail-img {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    margin-bottom: .5rem;
+  }
+  .detail-info {
+    width: 100%;
+  }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

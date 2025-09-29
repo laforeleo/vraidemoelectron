@@ -1,14 +1,19 @@
 <template>
-  <ul uk-tab>
-    <li class="uk-active">
-      <router-link to="/page-1">page One</router-link>
-    </li>
-    <li>
-      <router-link to="/page-2">page Two</router-link>
-    </li>
-  </ul>
-
-  <router-view/>
+    <router-view />
 </template>
-<script setup lang="ts">
+
+<script setup>
+import { computed } from 'vue'
+import { clearToken, isAuthenticated } from './services/auth'
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
+
+const authed = computed(() => isAuthenticated())
+
+function logoutNow() {
+  clearToken()
+  router.replace('/login')
+}
 </script>
